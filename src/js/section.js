@@ -1,3 +1,6 @@
+//import firstResponse from './API.js';
+
+//console.log(firstResponse);
 export const renderPrincipal = (sectionInFunction) => {
     sectionInFunction.innerHTML = `
     <article class="card" style="width: 20rem">
