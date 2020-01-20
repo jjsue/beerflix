@@ -30,3 +30,5 @@ const firstResponse = axios({
   .finally(function () {
     console.log('Finalizada llamada API');
   });
+
+export default firstResponse;
