@@ -39,4 +39,5 @@ export const renderPrincipal = (sectionInFunction) => {
     `
     console.log(sectionInFunction);
 }
+const API_KEY = 'NVJ0DBN-QEXM4CV-HF2D4EQ-DM2VN0W';
 export default renderPrincipal;
