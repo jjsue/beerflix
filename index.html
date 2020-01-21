@@ -13,9 +13,9 @@
     <!-- navbar -->
     <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top d-flex justify-content-between">
       <a href="index.html" class="logotipo"></a>
-      <form class="d-flex flex-fill" method="POST">
+      <form class="d-flex flex-fill" method="GET" id="miFormulario">
           <input id="busqueda" class="form-control-lg w-100" type="text" name="busqueda" placeholder="Escribe aquí tu cerveza">
-          <select class="form-control-lg flex-shrink-1" name = "dropdown">
+          <select id="limite" class="form-control-lg flex-shrink-1" name = "amount">
             <option value = "1" selected>1</option>
             <option value = "2">2</option>
             <option value = "3">3</option>
@@ -27,14 +27,12 @@
             <option value = "9">9</option>
             <option value = "10">10</option>
           </select>
-          <input id="bbusqueda" class="btn btn-primary btn-lg" type="submit" name="bbusqueda" placeholder="Boton" value="Buscar">
+          <input id="bbusqueda" class="btn btn-primary btn-lg" type="submit" name="bbusqueda" value="Buscar">
       </form>
     </nav>
     <!-- navbar-end -->
     <main>
-      <section id="beersection" class="d-flex flex-wrap justify-content-around" style="margin-left: 5vw; margin-right: 5vw;">
-        <br>
-      </section>
+      <section id="beersection" class="d-flex flex-wrap justify-content-around" style="margin-left: 5vw; margin-right: 5vw;"></section>
       <!--JS-->
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!--Axios-->
       <script type="module" src="./src/js/routes.js"></script>
