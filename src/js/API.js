@@ -28,9 +28,9 @@ if(busqueda === null){//Si no hay nada en busqueda lo dejamos como una cadena va
             break;
           }
           if (i === 0){
-              beerSect.innerHTML = renderPrincipal(response.data.beers[i].image,response.data.beers[i].name, response.data.beers[i].description);
+              beerSect.innerHTML = renderPrincipal(response.data.beers[i].image, response.data.beers[i].name, response.data.beers[i].description, response.data.beers[i].beerId);
           }else{
-              beerSect.innerHTML = beerSect.innerHTML + renderPrincipal(response.data.beers[i].image,response.data.beers[i].name, response.data.beers[i].description);
+              beerSect.innerHTML = beerSect.innerHTML + renderPrincipal(response.data.beers[i].image, response.data.beers[i].name, response.data.beers[i].description, response.data.beers[i].beerId);
           }
       }
     })
