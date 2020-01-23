@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
-    <title>Beerflix</title>
+    <title>Beerflix - Detalle</title>
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- styles -->
@@ -11,14 +11,35 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top d-flex justify-content-between">
+    <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top d-flex justify-content-start">
       <a href="index.html" class="logotipo"></a>
-      <h1 class="letra">Aqui vamos a pintar el nombre de la cerveza</h1>
-      <div class="centerer"></div>
+      <h3 id="titulo" class="letra">Beerflix...</h3>
     </nav>
     <!-- navbar-end -->
     <main>
-      <section id="beersection" class="d-flex flex-wrap justify-content-around" style="margin-left: 5vw; margin-right: 5vw;"></section>
+      <section id=detailSection>
+        <div class="detailContainer">
+          <img src="./src/icon/example.jpg" alt="nothing brother">
+          <h2>Descripción:</h2>
+          <p>LoremipsumDolorSitAMET</p>
+          <h3>Fecha de elaboración:</h3>
+          <p>03/2011</p>
+          <h3>Precio:</h3><p>15€</p>
+        </div>
+        <div class="commentContainer">
+          <h3>Comentarios:</h3>
+          <p>Tal y cual pascual jaja</p>
+          <p>Tal y cual pascual jaja</p>
+          <p>Tal y cual pascual jaja</p>
+          <form method="post">
+            <h4>Envianos tu comentario:</h4>
+            <textarea name="comment" class="form-control">
+              The cat was playing in the garden.
+            </textarea>
+            <input id="commentSubmit" class="btn btn-primary btn-lg" type="submit" name="commentSubmitName" value="Enviar">
+          </form>
+        </div>
+      </section>
       <!--JS-->
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!--Axios-->
       <script type="module" src="./src/js/detail.js"></script>

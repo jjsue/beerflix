@@ -1,6 +1,3 @@
-//import firstResponse from './API.js';
-
-//console.log(firstResponse);
 export const renderPrincipal = (img,beerName,description,beerId) => {
   return `
     <article class="card text-white bg-dark mb-3 card_modificada">
