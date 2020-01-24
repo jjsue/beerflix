@@ -20,13 +20,11 @@ export const tituloComentario = (titulo) => {
 }
 export const formulario = () => {
     return `
-    <form method="post">
+    <form action="#" id="miComentario" method="post">
     <h5>Envianos tu comentario:</h5>
-    <textarea name="comment" class="form-control">
-      Escribe tu comentario
-    </textarea>
+    <textarea id="myTextArea" name="comment" class="form-control"></textarea>
     <input id="commentSubmit" class="btn btn-primary btn-lg" type="submit" name="commentSubmitName" value="Enviar">
   </form>
   `
 }
-  export default {renderDetail, comentario, tituloComentario, formulario};
+export default {renderDetail, comentario, tituloComentario, formulario};
