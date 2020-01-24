@@ -1,7 +1,8 @@
 //import {renderPrincipal} from './section.js';
-import {renderDetail} from './section-detail.js';
-const API_KEY = 'NVJ0DBN-QEXM4CV-HF2D4EQ-DM2VN0W'
-const detailSect = document.getElementById('detailSection')
+import {renderDetail, comentario, tituloComentario, formulario} from './section-detail.js';
+const API_KEY = 'NVJ0DBN-QEXM4CV-HF2D4EQ-DM2VN0W';
+const detailSect = document.getElementById('detailContainer');
+const detailComment = document.getElementById('commentContainer');
 const title = document.getElementById('titulo');
 let busquedaInt = '';
 const busqueda = window.location.search;
@@ -29,10 +30,17 @@ axios({
             },
   })
     .then(function (response) {
-      console.log(response.data.beer)
-      //title.innerText = response.data.beer.name;
-      //detailSect.innerHTML = renderDetail(response.data.beer.image, response.data.beer.name, response.data.beer.description, response.data.beer.firstBrewed, response.data.beer.price);
-      
+      title.innerText = response.data.beer.name;
+      detailSect.innerHTML = renderDetail(response.data.beer.image, response.data.beer.name, response.data.beer.description, response.data.beer.firstBrewed, response.data.beer.price);
+      detailComment.innerHTML = tituloComentario("Comentarios:");
+      if(response.data.beer.comments[0] === undefined) { //controlamos que haya o no comentarios.
+        detailComment.innerHTML = detailComment.innerHTML + comentario("No hay ningún comentario, ¡Se el primero!");
+      }else{
+      for (let i = 0; i < response.data.beer.comments.length; i++){
+          detailComment.innerHTML = detailComment.innerHTML + comentario(response.data.beer.comments[i].comment);
+      }
+    }
+    detailComment.innerHTML = detailComment.innerHTML + formulario();
     })
     .catch(function (error) {
       console.log(error);
