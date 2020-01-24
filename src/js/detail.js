@@ -47,12 +47,8 @@ axios({
       return "Ha habido un error";
     })
     .finally(function () {
-      document.getElementById("miComentario").addEventListener("submit", envioComentario);
-      console.log(document.getElementById("myTextArea").value);
-      //envioComent(sessionStorage.getItem('beerId', document.getElementById("myTextArea").value)); //Funcion para enviar los comentarios preparada.
+      document.querySelector('#miComentario').addEventListener('submit', (evt) => {
+        evt.preventDefault();
+        envioComent(sessionStorage.getItem('beerId'), document.getElementById("myTextArea").value);
+      })
     });
-
-function envioComentario(){
-  //sessionStorage.setItem('comment', document.getElementById("myTextArea").value) //Lo hago así porque directamente por id no lo envia correctamente.
-  envioComent(sessionStorage.getItem('beerId'), document.getElementById("myTextArea").value);
-};

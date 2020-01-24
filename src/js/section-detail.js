@@ -20,7 +20,7 @@ export const tituloComentario = (titulo) => {
 }
 export const formulario = () => {
     return `
-    <form action="#" id="miComentario" method="post">
+    <form id="miComentario">
     <h5>Envianos tu comentario:</h5>
     <textarea id="myTextArea" name="comment" class="form-control"></textarea>
     <input id="commentSubmit" class="btn btn-primary btn-lg" type="submit" name="commentSubmitName" value="Enviar">
