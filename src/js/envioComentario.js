@@ -10,7 +10,17 @@ export const envioComent = (beerId, comentario) => {
         data: {
           comment: `${comentario}`
         }
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+        return "Ha habido un error";
+      })
+      .finally(function () {
+        alert("Comentario enviado satisfactoriamente, acepta y se recargará la pagina para que puedas ver tu comentario.")
+        window.location.reload(true); 
       });
   }
 export default envioComent;
-//https://beerflix-api.herokuapp.com/api/v1/beers/2/comment
