@@ -2,8 +2,9 @@
 import {renderDetail, comentario, tituloComentario, formulario} from './section-detail.js';
 import {envioComent} from './envioComentario.js';
 const API_KEY = 'NVJ0DBN-QEXM4CV-HF2D4EQ-DM2VN0W';
-const detailSect = document.getElementById('detailContainer');
-const detailComment = document.getElementById('commentContainer');
+const detailSect = document.getElementById('imgAndDesc');
+const detailComment = document.getElementById('comments');
+const pintarForm = document.getElementById('miComentario');
 const title = document.getElementById('titulo');
 let busquedaInt = '';
 const busqueda = window.location.search;
@@ -40,7 +41,7 @@ axios({
           detailComment.innerHTML = detailComment.innerHTML + comentario(response.data.beer.comments[i].comment);
       }
     }
-    detailComment.innerHTML = detailComment.innerHTML + formulario();
+    pintarForm.innerHTML = formulario();
     })
     .catch(function (error) {
       console.log(error);
