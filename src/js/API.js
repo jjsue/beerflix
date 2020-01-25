@@ -1,4 +1,5 @@
 import {renderPrincipal} from './section.js';
+import {dateFilter} from './order.js';
 const API_KEY = 'NVJ0DBN-QEXM4CV-HF2D4EQ-DM2VN0W'
 
 //Tomamos el section:
@@ -6,11 +7,15 @@ const beerSect = document.getElementById('beersection') //Cogemos todo el sectio
 //Tomamos los valores de la busqueda (Si los hubiera):
 var busqueda = sessionStorage.getItem('lastsearch');
 var limite = sessionStorage.getItem('limit');
+var yearFilter = sessionStorage.getItem('year');
 if(limite === null){ //Si no hay limite establecido colocamos uno de 10;
   limite = 10;
 }
 if(busqueda === null){//Si no hay nada en busqueda lo dejamos como una cadena vacía.
   busqueda = '';
+}
+if(yearFilter === null){
+  yearFilter = '*';
 }
 //Pintamos cuando carga la web:
   const firstResponse = axios({
@@ -23,16 +28,22 @@ if(busqueda === null){//Si no hay nada en busqueda lo dejamos como una cadena va
             },
   })
     .then(function (response) {
-      for (let i=0; i<10; i++){ //Aqui comenzamos a pintar propiamente dicho.
-          if(response.data.beers[i] === undefined){ //Si la busqueda no devuelve nada no bloqueamos la ejecucion.
-            break;
-          }
-          if (i === 0){
-              beerSect.innerHTML = renderPrincipal(response.data.beers[i].image, response.data.beers[i].name, response.data.beers[i].description, response.data.beers[i].beerId);
-          }else{
-              beerSect.innerHTML = beerSect.innerHTML + renderPrincipal(response.data.beers[i].image, response.data.beers[i].name, response.data.beers[i].description, response.data.beers[i].beerId);
-          }
-      }
+      if(response.data.beers === undefined){ //Si la busqueda no devuelve nada no bloqueamos la ejecucion.
+      console.log("sin resultados");
+      } else {
+        let filterResponse = dateFilter(response.data.beers, yearFilter);
+        console.log(filterResponse);
+        for (let i=0; i<10; i++){ //Aqui comenzamos a pintar propiamente dicho.
+            if (filterResponse[i] == undefined){
+              break; //Cortamos la ejecucion si el filtro no devuelve nada.
+            }
+            if (i === 0){
+                beerSect.innerHTML = renderPrincipal(filterResponse[i].image, filterResponse[i].name, filterResponse[i].description, filterResponse[i].beerId);
+            }else{
+                beerSect.innerHTML = beerSect.innerHTML + renderPrincipal(filterResponse[i].image, filterResponse[i].name, filterResponse[i].description, filterResponse[i].beerId);
+            }
+        }
+    }
     })
     .catch(function (error) {
       console.log(error);

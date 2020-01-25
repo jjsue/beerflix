@@ -5,5 +5,6 @@ document.getElementById("miFormulario").addEventListener("submit", guardadoSessi
 function guardadoSession() {
     //Extraer los valores y cargarlos a la session storage.
     sessionStorage.setItem('lastsearch', document.getElementById("busqueda").value);
-    sessionStorage.setItem('limit', document.getElementById("limite").value);
+    sessionStorage.setItem('limit', 10);
+    sessionStorage.setItem('year', document.getElementById("limite").value);
   }
