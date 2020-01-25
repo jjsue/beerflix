@@ -29,10 +29,9 @@ if(yearFilter === null){
   })
     .then(function (response) {
       if(response.data.beers === undefined){ //Si la busqueda no devuelve nada no bloqueamos la ejecucion.
-      console.log("sin resultados");
+      console.log(".");
       } else {
         let filterResponse = dateFilter(response.data.beers, yearFilter);
-        console.log(filterResponse);
         for (let i=0; i<10; i++){ //Aqui comenzamos a pintar propiamente dicho.
             if (filterResponse[i] == undefined){
               break; //Cortamos la ejecucion si el filtro no devuelve nada.
