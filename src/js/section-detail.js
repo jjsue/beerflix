@@ -17,7 +17,7 @@ export const comentario = (comment) => {
   }
 export const tituloComentario = (titulo) => {
     return `
-        <h4>${titulo}</h4>
+        <h4 class="ml-3">${titulo}</h4>
     `;
 }
 export const formulario = () => {
