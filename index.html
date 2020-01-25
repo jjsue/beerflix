@@ -10,12 +10,20 @@
     <link rel="stylesheet" href="./src/styles/styles.css">
   </head>
   <body class=bg-secondary>
+  <header>
+      <picture>
+        <source img class="img-fluid" media="(min-width: 600px)" srcset="./src/icon/banner-1280.jpg">
+        <source img class="img-fluid" media="(min-width: 1200px)" srcset="./src/icon/banner-1920.jpg">
+        <source img class="img-fluid" media="(min-width: 1900px)" srcset="./src/icon/banner-5000.jpg">
+        <img class="img-fluid" src="./src/icon/banner-640.jpg" alt="Flowers" style="width:auto;">
+      </picture>
+    </header>
     <!-- navbar -->
     <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top d-flex justify-content-between">
       <a href="index.html" class="logotipo"></a>
-      <form class="d-flex flex-fill" method="GET" id="miFormulario">
-          <input id="busqueda" class="form-control-lg w-100" type="text" name="busqueda" placeholder="Escribe aquí tu cerveza">
-          <select id="limite" class="form-control-lg flex-shrink-1" name = "amount">
+      <form class="d-flex flex-wrap flex-fill" method="GET" id="miFormulario">
+          <input id="busqueda" class="form-control-lg flex-fill mx-1 flex-grow-1" type="text" name="busqueda" placeholder="Escribe aquí tu cerveza">
+          <select id="limite" class="form-control-lg mx-1" name = "amount">
             <option value = "1990">1990</option>
             <option value = "1991">1991</option>
             <option value = "1992">1992</option>
@@ -48,7 +56,7 @@
             <option value = "2020">2020</option>
             <option value = "*" selected>*</option>
           </select>
-          <input id="bbusqueda" class="btn btn-primary btn-lg" type="submit" name="bbusqueda" value="Buscar">
+          <input id="bbusqueda" class="btn btn-primary btn-lg mx-1 align-self-stretch" type="submit" name="bbusqueda" value="Buscar">
       </form>
     </nav>
     <!-- navbar-end -->
