@@ -2,7 +2,14 @@
     width: 20rem;
     height: auto;
 }
+.card-detail{
+    width: 20rem;
+}
 .img-in-card{
     height: 50%;
+    width: auto;
+}
+.img-detail{
+    height: 300px;
     width: auto;
 }

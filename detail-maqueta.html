@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+    <title>Beerflix - Detalle</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- styles -->
+    <link rel="stylesheet" href="./src/styles/styles.css">
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav id="navbar" class="navbar navbar-dark bg-dark sticky-top d-flex justify-content-start">
+      <a href="index.html" class="logotipo"></a>
+      <h3 id="titulo" class="letra">Beerflix...</h3>
+    </nav>
+    <!-- navbar-end -->
+    <main>
+      <section id="detailSection" class="bg-secondary text-white">
+        <div id="imgAndDesc" class="d-flex flex-wrap justify-content-center">
+            <div id="imgContainer"><img src="./src/icon/7.png" alt="Nombre de la cerveza" class="img-detail"></div>
+            <div id="detailContainer" class="align-self-center bg-dark text-white card mx-3 my-3 px-3 py-3 text-white bg-dark">    
+                <h2>Descripción:</h2>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <h3>Fecha de elaboración:</h3>
+                <p>10/2012</p>
+                <h3>Precio:</h3><p>15€</p>
+            </div>
+    </div>
+        <div id="commentContainer">
+            <h3 class="ml-3">Comentarios:</h3>
+            <div id="comments" class="d-flex flex-wrap flex-column">
+                <div class="card mx-3 my-3 px-3 py-3 text-white bg-dark"><p class="card-text">Tal y cual pascual jajaTal y cual pascual jajaTal y cual pascual jajaTal y cual pascual jaja</p></div>
+                <div class="card mx-3 my-3 px-3 py-3 text-white bg-dark"><p class="card-text">Tal y cual pascual jaja</p></div>
+                <div class="card mx-3 my-3 px-3 py-3 text-white bg-dark"><p class="card-text">Tal y cual pascual jaja</p></div>
+                <div class="card mx-3 my-3 px-3 py-3 text-white bg-dark"><p class="card-text">Tal y cual pascual jaja</p></div>
+                <div class="card mx-3 my-3 px-3 py-3 text-white bg-dark"><p class="card-text">Tal y cual pascual jaja</p></div>
+            </div>
+            <form id="miComentario">
+                <h5 class="ml-3">Envianos tu comentario:</h5>
+                <div class="form-group d-flex">
+                    <textarea id="myTextArea" name="comment" class="form-control mx-3 my-3"></textarea>
+                    <input id="commentSubmit" class="btn btn-primary btn-lg mx-3 my-3" type="submit" name="commentSubmitName" value="Enviar">
+                </div>
+            </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
