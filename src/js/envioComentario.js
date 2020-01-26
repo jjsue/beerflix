@@ -13,14 +13,24 @@ export const envioComent = (beerId, comentario) => {
       })
       .then(function (response) {
         console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-        return "Ha habido un error";
-      })
-      .finally(function () {
         alert("Comentario enviado satisfactoriamente, acepta y se recargará la pagina para que puedas ver tu comentario.")
         window.location.reload(true); 
+      })
+      .catch(function (error) {
+        if (error == "Error: Request failed with status code 403"){
+          alert("No tienes permiso para comentar");
+        }
+        if (error == "Error: Request failed with status code 400"){
+          alert("Error 400 Bad request");
+        }
+        if (error == "Error: Request failed with status code 404"){
+         alert('Error 404, cerveza no encontrada');
+        }
+        if (error == "Error: Request failed with status code 500"){
+          alert("Error interno del servidor, prueba mas tarde");
+        }
+      })
+      .finally(function () {
       });
   }
 export default envioComent;

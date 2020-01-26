@@ -45,8 +45,12 @@ if(yearFilter === null){
     }
     })
     .catch(function (error) {
-      console.log(error);
-      return "Ha habido un error";
+      if (error == "Error: Request failed with status code 403"){
+        beerSect.innerHTML = '<h1>No tienes permiso para ver esta pagina</h1>'
+      }
+      if (error == "Error: Request failed with status code 400"){
+        beerSect.innerHTML = '<h1>Error de parametros, prueba a volver a hacer la busqueda</h1>'
+      }
     })
     .finally(function () {
       if(beerSect.innerHTML === ''){

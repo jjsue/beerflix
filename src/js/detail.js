@@ -44,8 +44,18 @@ axios({
     pintarForm.innerHTML = formulario();
     })
     .catch(function (error) {
-      console.log(error);
-      return "Ha habido un error";
+      if (error == "Error: Request failed with status code 403"){
+        detailSect.innerHTML = '<h1>No tienes permiso para ver esta pagina</h1>'
+      }
+      if (error == "Error: Request failed with status code 400"){
+        detailSect.innerHTML = '<h1>Error de parametros, prueba a volver a hacer la busqueda</h1>'
+      }
+      if (error == "Error: Request failed with status code 404"){
+        detailSect.innerHTML = '<h1>Error 404, cerveza no encontrada</h1>'
+      }
+      if (error == "Error: Request failed with status code 500"){
+        detailSect.innerHTML = '<h1>Error 500, error interno del servidor, prueba de nuevo mas tarde</h1>'
+      }
     })
     .finally(function () {
       document.querySelector('#miComentario').addEventListener('submit', (evt) => {
